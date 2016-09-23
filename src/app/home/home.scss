@@ -1,0 +1,42 @@
+.ExcelTable2003 {
+  border-width: 1px 0 0 1px;
+  border-style: solid;
+  border-color: #404040;
+  font-size: 12pt;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.ExcelTable2003 TH {
+  background-color: #D4D0C8;
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-color: #808080;
+  font-weight: normal;
+}
+
+.ExcelTable2003 TD {
+  background-color: white;
+  padding: 0 0 0 0;
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-color: #C0C0C0;
+}
+
+.ExcelTable2003 TD.heading {
+  background-color: #D4D0C8;
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-color: #808080;
+  text-align: center;
+  padding: 0 0 0 0;
+}
+
+input {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}

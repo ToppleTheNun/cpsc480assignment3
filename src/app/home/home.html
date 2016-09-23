@@ -1,0 +1,65 @@
+<div class="excel" id="excel">
+  <table id="excelTable" border="1" class="ExcelTable2003">
+    <thead>
+    <tr>
+      <th class="heading">&nbsp;</th>
+      <th class="heading">A</th>
+      <th class="heading">B</th>
+      <th class="heading">C</th>
+      <th class="heading">D</th>
+      <th class="heading">E</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+      <td class="heading" align="left" valign="bottom">1</td>
+      <td align="center" valign="bottom">Number1</td>
+      <td align="center" valign="bottom">Number2</td>
+      <td align="center" valign="bottom">Sum</td>
+      <td align="center" valign="bottom">Product</td>
+      <td align="center" valign="bottom">Average</td>
+    </tr>
+    <tr>
+      <td class="heading" align="left" valign="bottom">2</td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number1[0]" ng-change="vm.update(0)"></td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number2[0]" ng-change="vm.update(0)"></td>
+      <td align="right" valign="bottom">{{vm.data.sum[0]}}</td>
+      <td align="right" valign="bottom">{{vm.data.product[0]}}</td>
+      <td align="right" valign="bottom">{{vm.data.average[0]}}</td>
+    </tr>
+    <tr>
+      <td class="heading" align="left" valign="bottom">3</td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number1[1]" ng-change="vm.update(1)"></td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number2[1]" ng-change="vm.update(1)"></td>
+      <td align="right" valign="bottom">{{vm.data.sum[1]}}</td>
+      <td align="right" valign="bottom">{{vm.data.product[1]}}</td>
+      <td align="right" valign="bottom">{{vm.data.average[1]}}</td>
+    </tr>
+    <tr>
+      <td class="heading" align="left" valign="bottom">4</td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number1[2]" ng-change="vm.update(2)"></td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number2[2]" ng-change="vm.update(2)"></td>
+      <td align="right" valign="bottom">{{vm.data.sum[2]}}</td>
+      <td align="right" valign="bottom">{{vm.data.product[2]}}</td>
+      <td align="right" valign="bottom">{{vm.data.average[2]}}</td>
+    </tr>
+    <tr>
+      <td class="heading" align="left" valign="bottom">5</td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number1[3]" ng-change="vm.update(3)"></td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number2[3]" ng-change="vm.update(3)"></td>
+      <td align="right" valign="bottom">{{vm.data.sum[3]}}</td>
+      <td align="right" valign="bottom">{{vm.data.product[3]}}</td>
+      <td align="right" valign="bottom">{{vm.data.average[3]}}</td>
+    </tr>
+    <tr>
+      <td class="heading" align="left" valign="bottom">6</td>
+      <td align="right" valign="bottom"><strong>{{vm.sum(vm.data.number1)}}</strong></td>
+      <td align="right" valign="bottom"><strong>{{vm.sum(vm.data.number2)}}</strong></td>
+      <td align="right" valign="bottom"><strong>{{vm.sum(vm.data.sum)}}</strong></td>
+      <td align="right" valign="bottom"><strong>{{vm.sum(vm.data.product)}}</strong></td>
+      <td align="right" valign="bottom"><strong>{{vm.sum(vm.data.average)}}</strong></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
