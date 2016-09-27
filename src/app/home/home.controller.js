@@ -71,23 +71,29 @@
     }
 
     function sortByNumber1() {
-      var sorted = _.sortBy(vm.data.number1, _.identity, vm.ascendSort[0]);
+      var sorted = _.orderBy(vm.data.number1, _.identity, vm.ascendSort[0]);
       vm.currentSort = 0;
       $log.debug('vm.ascendSort[' + vm.currentSort + ']: ', vm.ascendSort[vm.currentSort]);
       vm.ascendSort[0] = (vm.ascendSort[0] === 'asc') ? 'desc' : 'asc';
       $log.debug('vm.ascendSort[' + vm.currentSort + ']: ', vm.ascendSort[vm.currentSort]);
       $log.debug('sortByNumber1() - sorted: ', sorted);
       vm.data.number1 = sorted;
+      _.range(vm.data.number1.length).forEach(function (n) {
+        update(n);
+      });
     }
 
     function sortByNumber2() {
-      var sorted = _.sortBy(vm.data.number2, _.identity, vm.ascendSort[1]);
+      var sorted = _.orderBy(vm.data.number2, _.identity, vm.ascendSort[1]);
       vm.currentSort = 1;
       $log.debug('vm.ascendSort[' + vm.currentSort + ']: ', vm.ascendSort[vm.currentSort]);
       vm.ascendSort[1] = (vm.ascendSort[1] === 'asc') ? 'desc' : 'asc';
       $log.debug('vm.ascendSort[' + vm.currentSort + ']: ', vm.ascendSort[vm.currentSort]);
       $log.debug('sortByNumber2() - sorted: ', sorted);
       vm.data.number2 = sorted;
+      _.range(vm.data.number1.length).forEach(function (n) {
+        update(n);
+      });
     }
 
     function sortBySum() {
@@ -105,6 +111,9 @@
         vm.data.number1[indexInSorted] = value.number1;
         vm.data.number2[indexInSorted] = value.number2;
         vm.data.sum[indexInSorted] = value.sum;
+      });
+      _.range(vm.data.number1.length).forEach(function (n) {
+        update(n);
       });
     }
 
@@ -124,6 +133,9 @@
         vm.data.number2[indexInSorted] = value.number2;
         vm.data.product[indexInSorted] = value.product;
       });
+      _.range(vm.data.number1.length).forEach(function (n) {
+        update(n);
+      });
     }
 
     function sortByAverage() {
@@ -141,6 +153,9 @@
         vm.data.number1[indexInSorted] = value.number1;
         vm.data.number2[indexInSorted] = value.number2;
         vm.data.average[indexInSorted] = value.average;
+      });
+      _.range(vm.data.number1.length).forEach(function (n) {
+        update(n);
       });
     }
 

@@ -6,12 +6,6 @@
 
   /** @ngInject */
   function config($logProvider) {
-    // Enable log
-    // @if DEBUG='true'
-    $logProvider.debugEnabled(true);
-    // @endif
-    // @if DEBUG='false'
     $logProvider.debugEnabled(false);
-    // @endif
   }
 })();
