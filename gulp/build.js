@@ -41,6 +41,7 @@ gulp.task('html', ['inject', 'partials'], function () {
   return gulp.src(path.join(conf.paths.tmp, '/serve/*.html'))
     .pipe($.inject(partialsInjectFile, partialsInjectOptions))
     .pipe($.useref())
+    .pipe($.replace('../../bower_components/font-awesome/fonts', '../fonts'))
     .pipe(jsFilter)
     .pipe($.sourcemaps.init())
     .pipe($.ngAnnotate())
@@ -67,9 +68,18 @@ gulp.task('html', ['inject', 'partials'], function () {
     .pipe($.size({ title: path.join(conf.paths.dist, '/'), showFiles: true }));
   });
 
+gulp.task('fonts', ['fonts:fontawesome', 'fonts:bower']);
+
+gulp.task('fonts:fontawesome', function () {
+  return gulp.src('./bower_components/font-awesome/fonts/**/*')
+    .pipe($.filter('**/*.{eot,otf,svg,ttf,woff,woff2}'))
+    .pipe($.flatten())
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/')));
+});
+
 // Only applies for fonts from bower dependencies
 // Custom fonts are handled by the "other" task
-gulp.task('fonts', function () {
+gulp.task('fonts:bower', function () {
   return gulp.src($.mainBowerFiles())
     .pipe($.filter('**/*.{eot,otf,svg,ttf,woff,woff2}'))
     .pipe($.flatten())
