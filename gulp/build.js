@@ -63,6 +63,7 @@ gulp.task('html', ['inject', 'partials'], function () {
       collapseBooleanAttributes: true,
       collapseWhitespace: true
     }))
+    .pipe($.rename('spreadsheet.html'))
     .pipe(htmlFilter.restore)
     .pipe(gulp.dest(path.join(conf.paths.dist, '/')))
     .pipe($.size({ title: path.join(conf.paths.dist, '/'), showFiles: true }));
