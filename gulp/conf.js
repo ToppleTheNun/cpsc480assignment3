@@ -38,3 +38,5 @@ exports.errorHandler = function(title) {
     this.emit('end');
   };
 };
+
+exports.debug = gutil.env.debug || true;

@@ -2,12 +2,47 @@
   <table id="excelTable" border="1" class="ExcelTable2003">
     <thead>
     <tr>
-      <th class="heading">&nbsp;</th>
-      <th class="heading">A</th>
-      <th class="heading">B</th>
-      <th class="heading">C</th>
-      <th class="heading">D</th>
-      <th class="heading">E</th>
+      <td class="heading">&nbsp;</td>
+      <td class="heading">
+        <a href="#" ng-click="vm.sortByNumber1()">
+          A
+        </a>
+        <span ng-show="vm.currentSort !== 0" class="fa fa-arrows-v"></span>
+        <span ng-show="vm.currentSort === 0 && vm.ascendSort[0] === 'asc'" class="fa fa-long-arrow-up"></span>
+        <span ng-show="vm.currentSort === 0 && vm.ascendSort[0] === 'desc'" class="fa fa-long-arrow-down"></span>
+      </td>
+      <td class="heading">
+        <a href="#" ng-click="vm.sortByNumber2()">
+          B
+          <span ng-show="vm.currentSort !== 1" class="fa fa-arrows-v"></span>
+          <span ng-show="vm.currentSort === 1 && vm.ascendSort[1] === 'asc'" class="fa fa-long-arrow-up"></span>
+          <span ng-show="vm.currentSort === 1 && vm.ascendSort[1] === 'desc'" class="fa fa-long-arrow-down"></span>
+        </a>
+      </td>
+      <td class="heading">
+        <a href="#" ng-click="vm.sortBySum()">
+          C
+          <span ng-show="vm.currentSort !== 2" class="fa fa-arrows-v"></span>
+          <span ng-show="vm.currentSort === 2 && vm.ascendSort[2] === 'asc'" class="fa fa-long-arrow-up"></span>
+          <span ng-show="vm.currentSort === 2 && vm.ascendSort[2] === 'desc'" class="fa fa-long-arrow-down"></span>
+        </a>
+      </td>
+      <td class="heading">
+        <a href="#" ng-click="vm.sortByProduct()">
+          D
+          <span ng-show="vm.currentSort !== 3" class="fa fa-arrows-v"></span>
+          <span ng-show="vm.currentSort === 3 && vm.ascendSort[3] === 'asc'" class="fa fa-long-arrow-up"></span>
+          <span ng-show="vm.currentSort === 3 && vm.ascendSort[3] === 'desc'" class="fa fa-long-arrow-down"></span>
+        </a>
+      </td>
+      <td class="heading">
+        <a href="#" ng-click="vm.sortByAverage()">
+          E
+          <span ng-show="vm.currentSort !== 4" class="fa fa-arrows-v"></span>
+          <span ng-show="vm.currentSort === 4 && vm.ascendSort[4] === 'asc'" class="fa fa-long-arrow-up"></span>
+          <span ng-show="vm.currentSort === 4 && vm.ascendSort[4] === 'desc'" class="fa fa-long-arrow-down"></span>
+        </a>
+      </td>
     </tr>
     </thead>
 
@@ -22,35 +57,43 @@
     </tr>
     <tr>
       <td class="heading" align="left" valign="bottom">2</td>
-      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number1[0]" ng-change="vm.update(0)"></td>
-      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number2[0]" ng-change="vm.update(0)"></td>
-      <td align="right" valign="bottom">{{vm.data.sum[0]}}</td>
-      <td align="right" valign="bottom">{{vm.data.product[0]}}</td>
-      <td align="right" valign="bottom">{{vm.data.average[0]}}</td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number1[0]" ng-change="vm.update(0)">
+      </td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number2[0]" ng-change="vm.update(0)">
+      </td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.sum[0]" readonly></td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.product[0]" readonly></td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.average[0]" readonly></td>
     </tr>
     <tr>
       <td class="heading" align="left" valign="bottom">3</td>
-      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number1[1]" ng-change="vm.update(1)"></td>
-      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number2[1]" ng-change="vm.update(1)"></td>
-      <td align="right" valign="bottom">{{vm.data.sum[1]}}</td>
-      <td align="right" valign="bottom">{{vm.data.product[1]}}</td>
-      <td align="right" valign="bottom">{{vm.data.average[1]}}</td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number1[1]" ng-change="vm.update(1)">
+      </td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number2[1]" ng-change="vm.update(1)">
+      </td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.sum[1]" readonly></td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.product[1]" readonly></td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.average[1]" readonly></td>
     </tr>
     <tr>
       <td class="heading" align="left" valign="bottom">4</td>
-      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number1[2]" ng-change="vm.update(2)"></td>
-      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number2[2]" ng-change="vm.update(2)"></td>
-      <td align="right" valign="bottom">{{vm.data.sum[2]}}</td>
-      <td align="right" valign="bottom">{{vm.data.product[2]}}</td>
-      <td align="right" valign="bottom">{{vm.data.average[2]}}</td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number1[2]" ng-change="vm.update(2)">
+      </td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number2[2]" ng-change="vm.update(2)">
+      </td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.sum[2]" readonly></td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.product[2]" readonly></td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.average[2]" readonly></td>
     </tr>
     <tr>
       <td class="heading" align="left" valign="bottom">5</td>
-      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number1[3]" ng-change="vm.update(3)"></td>
-      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number2[3]" ng-change="vm.update(3)"></td>
-      <td align="right" valign="bottom">{{vm.data.sum[3]}}</td>
-      <td align="right" valign="bottom">{{vm.data.product[3]}}</td>
-      <td align="right" valign="bottom">{{vm.data.average[3]}}</td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number1[3]" ng-change="vm.update(3)">
+      </td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.number2[3]" ng-change="vm.update(3)">
+      </td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.sum[3]" readonly></td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.product[3]" readonly></td>
+      <td align="right" valign="bottom"><input type="number" ng-model="vm.data.average[3]" readonly></td>
     </tr>
     <tr>
       <td class="heading" align="left" valign="bottom">6</td>
@@ -62,4 +105,10 @@
     </tr>
     </tbody>
   </table>
+</div>
+
+<div class="randomize">
+  <button ng-click="vm.randomizeData()">Randomize Data</button>
+  <p>vm.currentSort: {{vm.currentSort}}</p>
+  <p>vm.ascendSort[vm.currentSort] === 'asc': {{vm.ascendSort[vm.currentSort] === 'asc'}}</p>
 </div>

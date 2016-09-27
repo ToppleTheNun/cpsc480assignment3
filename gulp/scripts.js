@@ -18,9 +18,15 @@ gulp.task('scripts', function() {
   return buildScripts();
 });
 
+var nonspecAndMockFilter = $.filter(['**/*.js', '!**/*.spec.js', '!**/*.mock.js'], { restore: true });
+
 function buildScripts() {
   return gulp.src(path.join(conf.paths.src, '/app/**/*.js'))
+    .pipe($.cached('scripts'))
     .pipe($.eslint())
     .pipe($.eslint.format())
     .pipe($.size())
+    .pipe($.remember('scripts'))
+    .pipe(nonspecAndMockFilter)
+    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
 };
